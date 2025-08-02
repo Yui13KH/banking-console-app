@@ -1,7 +1,7 @@
 #pragma once
 
-#include "../../Bank/clsBankClient.h"
-#include "../core/clsScreen.h"
+#include "clsBankClient.h"
+#include "clsScreen.h"
 #include <iostream>
 #include <iomanip>
 

@@ -1,9 +1,9 @@
 #pragma once
 #include <iostream>
 #include <iomanip>
-#include "../Ui/core/clsScreen.h"
-#include "../Core/clsInputValidate.h"
-#include "../Core/clsUtility.h"
+#include "clsScreen.h"
+#include "clsInputValidate.h"
+#include "clsUtility.h"
 #include "clsDepositScreen.h"
 #include "clsWithdrawScreen.h"
 #include "clsTotalBalancesScreen.h"

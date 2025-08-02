@@ -1,10 +1,10 @@
 #pragma once
 
 #include <iostream>
-#include "../Ui/core/clsScreen.h"
-#include "../Bank/clsBankClient.h"
-#include "../Core/clsInputValidate.h"
-#include "../Core/clsDate.h"
+#include "clsScreen.h"
+#include "clsBankClient.h"
+#include "clsInputValidate.h"
+#include "clsDate.h"
 
 class clsTransferScreen : protected clsScreen {
    private:

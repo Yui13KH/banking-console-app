@@ -2,8 +2,8 @@
 
 #include <iostream>
 #include <iomanip>
-#include "../../Bank/clsCurrency.h"
-#include "../core/clsScreen.h"
+#include "clsCurrency.h"
+#include "clsScreen.h"
 
 class clsCurrenciesListScreen : protected clsScreen {
    private:

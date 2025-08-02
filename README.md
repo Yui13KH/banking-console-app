@@ -1,37 +1,66 @@
+Gotcha! Here’s a polished, easy-to-copy markdown README with your new info integrated and grammar fixed — chill, clear, and solid:
+
+````markdown
 # Console Bank System (OOP-based)
 
-> A somewhat basic banking system console app that uses OOP, relatively good file structure, some encryption, CRUD operations, admin, users and clients, logs, splitting code into libraries that call each other, permissions — there's a lot actually to cover.
-> I haven't touched this repo in like 3 months, but that's what it does in general. I don't think I commented in my code, but I hope it's understandable.
-> Maybe I should refactor it a bit 
+> A somewhat basic banking system console app that uses OOP, a relatively good file structure, some encryption, CRUD operations, admin, users and clients management, logs, splitting code into libraries that call each other, permissions — there's a lot actually to cover.  
+> I haven't touched this repo in about 3 months, but that's what it does in general. I didn't comment much in my code, but I hope it's understandable.  
+> Maybe I should refactor it a bit.
 
 ---
 
 ## Why It's One Commit
 
-Okay, so this might seem weird that it's only **1 commit**, but it's because I was committing this to another repo originally:
+Okay, so it might seem weird that there's only **1 commit**, but that's because I was originally committing this to another repo:
 
 👉 [cpp-learning-journey](https://github.com/Yui13KH/cpp-learning-journey)
 
-Didn’t expect it’ll grow this much and become a full console app, so I’m now moving it to its own repo.
+I didn’t expect it would grow this much and become a full console app, so I’m now moving it to its own repo.
 
-For the **exact commits**, it’s in this folder:
+For the **exact commits**, check this folder:
 
 📂 [`OOP Applications`](https://github.com/Yui13KH/cpp-learning-journey/tree/main/OOP%20Applications)
 
-In the commit history, you’ll see the `BankSystem` commits are related to this.
+In the commit history, you’ll see the `BankSystem` commits related to this.
+
+---
+
+## What’s New
+
+- Switched to CMake build system instead of manual `g++` commands with long relative paths.
+
+---
+
+## TODO 
+
+- Migrated from `.txt` files to an SQLite database for safer, easier data management.  
+
+---
+
+## Features
+
+- Manage **clients** with email, account number, phone number, account balance, and PIN code.  
+- CRUD (Create, Read, Update, Delete) operations on clients — as an admin or user with the right permissions.  
+- As admin (`MEOW`), add or delete **users**, assign/manage their permissions.  
+- Users can manage clients depending on assigned permissions.  
+- A **currency** section with search functionality — search currencies by key or country name and view rates to USD.  
+- Perform **deposits, withdrawals, and transfers** between accounts.  
+- Full logging for **logins** and **transactions**.  
+- Command-line interface with number selections — clear menus and flows.  
+- Built with OOP principles and proper file separation for maintainability.
 
 ---
 
 ## 🛠️ How to Compile
 
-I personally compile it using `g++`.
+I am using CMake with MinGW/MSYS2.
 
 ```bash
-cd src
-g++ BankSystem.cpp -o BankSystem
-```
-
-You can change the output name if you want.
+mkdir build
+cd build
+cmake -G "MinGW Makefiles" ..
+mingw32-make
+````
 
 Then just run the `.exe` (or binary on Linux).
 
@@ -39,14 +68,14 @@ Then just run the `.exe` (or binary on Linux).
 
 ## 🔑 Login Info (default admin)
 
-* **Username:** `MEOW` *(yes it's capitalized, or it won’t work)*
-* **Password:** `1234` *(I know it seems stupid but it's supposedly encrypted in the `Users.txt`)*
+* **Username:** `MEOW` *(yes, it’s capitalized — case matters)*
+* **Password:** `1234` *(It seems simple, but it’s encrypted in the database using a Caesar cipher)*
 
 ---
 
 ## 🧾 User Data Format
 
-Here's how each line in `Users.txt` is structured:
+For reference, here’s how each line in `Users.txt` was structured before migration:
 
 ```
 yui#//#Hirasawa#//#Mio@Gmail.com#//#8983883#//#MEOW#//#;<=>#//#255
@@ -64,14 +93,14 @@ yui#//#Hirasawa#//#Mio@Gmail.com#//#8983883#//#MEOW#//#;<=>#//#255
 
 ## 🔐 Permissions System
 
-I'm using **bitwise operators** — basically a simple 8-bit number (1 byte), where each bit is a permission.
+Permissions are stored as a single byte (8-bit number) using **bitwise operators**, where each bit represents a specific permission.
 
 * `1` = permission allowed
 * `0` = permission not allowed
 * `255` = all permissions (binary `11111111`)
 * Example: `3` is `00000011` → only 2 permissions enabled.
 
-What each bit does is defined in the code as:
+Here’s the enum defining each permission bit:
 
 ```cpp
 enum enPermissions {
@@ -81,9 +110,8 @@ enum enPermissions {
     pDeleteClient = 4,
     pUpdateClients = 8,
     pFindClient = 16,
-    pTranactions = 32,
+    pTransactions = 32,
     pManageUsers = 64,
     pLoginsLog = 128
 };
 ```
----

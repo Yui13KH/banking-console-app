@@ -1,7 +1,7 @@
 #pragma once
 
-#include "../core/clsScreen.h"
-#include "../../Users/clsUser.h"
+#include "clsScreen.h"
+#include "clsUser.h"
 #include <iostream>
 #include <iomanip>
 

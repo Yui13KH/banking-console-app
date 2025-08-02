@@ -1,9 +1,9 @@
 #pragma once
 #include <iostream>
-#include "../core/clsScreen.h"
-#include "../../Bank/clsCurrency.h"
-#include "../../Core/clsInputValidate.h"
-#include "../../Core/clsUtility.h"
+#include "clsScreen.h"
+#include "clsCurrency.h"
+#include "clsInputValidate.h"
+#include "clsUtility.h"
 
 class clsCurrencyCalculatorScreen : protected clsScreen {
    private:

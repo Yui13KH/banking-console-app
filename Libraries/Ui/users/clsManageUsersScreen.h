@@ -1,8 +1,8 @@
 #pragma once
 #include <iostream>
-#include "../core/clsScreen.h"
-#include "../../Core/clsInputValidate.h"
-#include "../../Core/clsUtility.h"
+#include "clsScreen.h"
+#include "clsInputValidate.h"
+#include "clsUtility.h"
 #include "clsUsersListScreen.h"
 #include "clsAddNewUserScreen.h"
 #include "clsDeleteUserScreen.h"

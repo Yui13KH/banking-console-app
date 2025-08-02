@@ -1,6 +1,6 @@
 #include <iostream>
-#include "../Libraries/Ui/auth/clsLoginScreen.h"
-#include "../Libraries/Core/clsUtility.h"
+#include "clsLoginScreen.h"
+#include "clsUtility.h"
 
 int main() {
     while (true) {

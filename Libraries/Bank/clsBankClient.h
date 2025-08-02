@@ -4,10 +4,10 @@
 #include <string>
 #include <vector>
 #include <fstream>
-#include "../Core/clsString.h"
-#include "../Core/clsPerson.h"
-#include "../Core/clsUtility.h"
-#include "../Core/Global.h"
+#include "clsString.h"
+#include "clsPerson.h"
+#include "clsUtility.h"
+#include "Global.h"
 
 class clsBankClient : public clsPerson {
    public:

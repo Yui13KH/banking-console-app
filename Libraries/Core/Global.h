@@ -1,4 +1,4 @@
 #pragma once
 #include <iostream>
-#include "../Users/clsUser.h"
+#include "clsUser.h"
 clsUser CurrentUser=clsUser::Find("","");
